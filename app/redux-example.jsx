@@ -52,3 +52,16 @@ console.log('Starting redux example');
 //var res = changeProp(startingValue);
 //console.log(startingValue);
 //console.log(res);
+
+// 1- Reducer must have a default satate
+// 2- Te reducer function must always return a state
+var reducer = (state = {name : 'Anonymous'}, action) => {
+  //state = state || {name : 'Anonymous'};
+
+  return state;
+};
+
+var store = redux.createStore(reducer);
+
+var currentState = store.getState();
+console.log('currenState', currentState);
